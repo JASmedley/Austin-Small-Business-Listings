@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from '@mui/material';
 import { useParams } from 'react-router-dom'; 
+import GoogleMaps from './Map';
 
 const Listing = ({ listings }) => {
     const { id } = useParams(); 
@@ -18,7 +19,9 @@ const Listing = ({ listings }) => {
             <br></br>
             <b>{listing.hours}</b>
             <p>{listing.description}</p>
+            <GoogleMaps width="500vh" height="400 vh" listings={listing}/>
         </Container>
+        
     );
 }
 

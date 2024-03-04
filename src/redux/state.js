@@ -4,7 +4,7 @@ const state = {
     listings: [
         {
            id: 1,
-          name:"Baker St. Pub & Grill",
+          name:"Baker St. Pub and Grill",
            description: "Convivial Sherlock Holmes-themed destination offering draft beer & a menu of bar food staples.",
            hours:"Monday - Sunday | 11 AM - 2 AM",
             address:"3003 S Lamar Blvd, Austin, TX 78704",
@@ -32,7 +32,7 @@ const state = {
         },
         {
             id:5,
-            name:"Deckhand Oyster Bar & Seafood",
+            name:"Deckhand Oyster Bar and Seafood",
            description:"Casual seafood eatery serving fresh and fried seafood as well as Thai cuisine in nautical themed surroundings. ",
            hours:"Monday - Sunday | 11 AM - 10 PM",
            address:"4211 S Lamar Blvd C-1, Austin, TX 78704"

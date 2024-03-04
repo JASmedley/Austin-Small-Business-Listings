@@ -9,7 +9,7 @@ import cookie from "cookie"
 
 const checkAuth = () => {
   const cookies = cookie.parse(document.cookie)
-  return cookies["loggedin"] ? true : false
+  return cookies["loggedIn"] ? true : false
 }
 
 const handleClearCookiesClick = () => {
@@ -31,7 +31,7 @@ const theme = createTheme({
     },
   });
 
-const AdminNavigation = (props) => {
+const Navigation = (props) => {
     return (
         <ThemeProvider theme={theme}>
 
@@ -71,4 +71,4 @@ const AdminNavigation = (props) => {
     )
 }
 
-export default AdminNavigation
+export default Navigation

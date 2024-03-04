@@ -7,7 +7,8 @@ import {
     DialogTitle
 } from '@mui/material'
 import { Link } from 'react-router-dom'
-
+import GoogleMaps from './Map';
+import { v4 as uuidv4 } from 'uuid'; 
 
 class AddListing extends Component {
     state = {
@@ -29,16 +30,16 @@ class AddListing extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         const payload = { ...this.state }
-        payload.id = this.props.listingsTotal + 1
+        payload.id = uuidv4(); // Generate a unique ID
         delete payload.open
         console.log("THE LISTING", payload)
         this.props.addListing(payload)
         this.setState({
             open: false,
-        name: '',
-        address: '',
-        hours: '',
-        description: '',
+            name: '',
+            address: '',
+            hours: '',
+            description: '',
         })
     }
 
@@ -67,7 +68,7 @@ class AddListing extends Component {
                     </Link>
                 </div>
                 <div>
-                    <Dialog open={this.state.open} onClose={this.toggleDialog} >
+                    <Dialog  open={this.state.open} onClose={this.toggleDialog} >
                         <DialogTitle>Add New Listing</DialogTitle>
                         <DialogContent>
                             <form 
@@ -98,9 +99,12 @@ class AddListing extends Component {
                                     onChange={this.handleTextChange} 
                                     required />
                                 <br />
+                                <GoogleMaps  width="300vw" height= "200vw" listings={this.state.name}/>
+
                                 <Button variant="contained" color="primary" type="submit" >Save</Button>
                             </form>
                         </DialogContent>
+                        
                     </Dialog>
                 </div>
             </Fragment>

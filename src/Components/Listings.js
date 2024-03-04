@@ -13,7 +13,7 @@ import cookie from 'cookie'
 
 const checkAuth = () => {
     const cookies = cookie.parse(document.cookie)
-    return cookies["loggedin"] ? true : false
+    return cookies["loggedIn"] === "true"
   }
 
 
@@ -40,14 +40,13 @@ const Listings = (props) => {
                         <TableCell>{listing.description}</TableCell>
                         <TableCell>{listing.hours}</TableCell>
                         <TableCell>{listing.address}</TableCell>
-                        {checkAuth() === true && (
+                       
                         <TableCell>
                         <DeleteIcon
                             onClick={() => props.removeListing(idx)}
                             className="icon text-red"
                         />
                         </TableCell>
-                    )}  
                     </TableRow>
                 ))}
                 </TableBody>

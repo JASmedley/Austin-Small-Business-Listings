@@ -20,13 +20,11 @@ function checkAuth() {
     )
    }
    const Router = () => {
-    // Retrieve listings data from Redux store
     const listings = useSelector(state => state.listings);
   
     return (
       <Routes>
         <Route path="/login" element={<Login />} />
-        {/* Pass listings data as props to Listings and Listing components */}
         <Route path="/" element={<Listings listings={listings} />} />
         <Route path="/:id" element={<Listing listings={listings} />} />
       </Routes>
