@@ -18,10 +18,11 @@ const checkAuth = () => {
 
 
 const Listings = (props) => {
-    const { listings } = props;
+    const { listings , users } = props;
 
     return (
         <Container maxWidth="lg" className="company-container">
+            <h4>Welcome {users}</h4>
             <Table>
                 <TableHead>
                     <TableRow >
@@ -40,13 +41,14 @@ const Listings = (props) => {
                         <TableCell>{listing.description}</TableCell>
                         <TableCell>{listing.hours}</TableCell>
                         <TableCell>{listing.address}</TableCell>
-                       
+                        {checkAuth() === true && (
                         <TableCell>
                         <DeleteIcon
                             onClick={() => props.removeListing(idx)}
                             className="icon text-red"
                         />
                         </TableCell>
+                    )}  
                     </TableRow>
                 ))}
                 </TableBody>

@@ -1,6 +1,19 @@
 import { combineReducers } from 'redux'
 
-const user = (state = null) => state
+const users = (state = {}, action) => {
+  switch(action.type) {
+    case 'LOGIN':
+        return  {
+          username: action.value
+        }
+    case 'LOGOUT':
+      return  {
+        username: ""
+      }
+    default: 
+      return state
+}
+}
 
 
 const listings = (state = [], action) => {
@@ -16,4 +29,4 @@ const listings = (state = [], action) => {
   }
 }
 
-export default combineReducers({ user, listings })
+export default combineReducers({ users, listings })

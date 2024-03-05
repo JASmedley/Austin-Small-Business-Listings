@@ -47,7 +47,7 @@ const Navigation = (props) => {
                      <Typography color="white">   <Link  to="/">Listings </Link></Typography>
                     </li>
                     <li className="nav-list-item">
-                     <Typography color="white">    <AddListing/> </Typography>
+                     <Typography color="white">    {checkAuth() ? (<AddListing/>): <></>} </Typography>
                     </li>
                     <li className="nav-list-item">
                         <Typography color="white"> {checkAuth() ? (

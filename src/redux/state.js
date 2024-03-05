@@ -1,6 +1,6 @@
 const state = {   
    
-   users: [{ username: "", password: "" }],
+   users: { username: "", password: "" },
     listings: [
         {
            id: 1,

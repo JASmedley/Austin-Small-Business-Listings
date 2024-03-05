@@ -2,7 +2,7 @@ import React from 'react'
 import { Routes, Route, Navigate} from 'react-router'
 import { useSelector } from 'react-redux'
 import cookie from 'cookie'
-import Login from './Components/Login'
+import Login from './containers/Login'
 import Listings from './containers/AdminListings'
 import Listing from './containers/Listing'
 

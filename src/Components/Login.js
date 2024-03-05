@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 
-const Login = () => {
+const Login = (props) => {
   const navigate = useNavigate();
 
   const [state, setState] = useState({
@@ -26,15 +26,15 @@ const Login = () => {
   const login = (e) => {
     console.log("Login button clicked");
     e.preventDefault();
+    props.login(state.username)
     document.cookie = cookie.serialize("loggedIn", "true", { maxAge: 1000 * 60 });
     navigate('/');
 
   };
 
   return (
-    <form onSubmit={login}>
       <Box
-        component="form"
+        component="form" onSubmit={login}
         sx={{
           '& > :not(style)': { 
             m: "0 auto", 
@@ -50,7 +50,6 @@ const Login = () => {
         <TextField required name="password" label="Password" type="password" variant="standard" onChange={handleTextChange} value={state.password} />
         <Button type="submit" variant="contained" color="primary">Login</Button>
       </Box>
-    </form>
   );
 };
 
