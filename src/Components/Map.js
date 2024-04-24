@@ -12,7 +12,7 @@ export default function GoogleMaps(props) {
   loading="lazy"
   allowfullscreen
   referrerpolicy="no-referrer-when-downgrade"
-  src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyDFm295kBYGydWdNsGB29GUL18AUnxEgpY&q=${props.listings.name}`}>
+  src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_API_KEY}&q=${props.listings.name}`}>
 </iframe>
     </div>
   )
